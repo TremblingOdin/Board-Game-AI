@@ -20,3 +20,11 @@ class Memory:
                 , 'AV': r[1]
                 , 'playerTurn': r[0].player_turn
                 })
+
+    def commit_ltmemory(self):
+        for i in self.stmemory:
+            self.ltmemory.append(i)
+        self.clear_stmemory()
+
+    def clear_stmemory(self):
+        self.stmemory=deque(maxlen=config.MEMORY_SIZE)

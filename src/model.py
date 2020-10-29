@@ -22,4 +22,7 @@ class General_Model():
     def predict(self, x):
         return self.model.predict(x)
 
+    def fit(self, states, targets, epochs, verbose, validation_split, batch_size):
+        return self.model.fit(states, targets, epochs=epochs, verbose=verbose, validation_split=validation_split, batch_size=batch_size)
+
 

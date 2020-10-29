@@ -11,6 +11,7 @@ from keras import regularizers
 import keras.backend as K
 
 from loss import softmax_cross_entropy_with_logits
+from setting import run_folder, run_archive_folder
 
 class General_Model():
     def __init__(self, reg_const, learning_rate, input_dim, output_dim):
@@ -26,5 +27,8 @@ class General_Model():
 
     def fit(self, states, targets, epochs, verbose, validation_split, batch_size):
         return self.model.fit(states, targets, epochs=epochs, verbose=verbose, validation_split=validation_split, batch_size=batch_size)
+
+    def write(self, game, version):
+        self.model.save(run_folder + 'models/version' + "{0:0>4}".format(version) + '.h5')
 
 

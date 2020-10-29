@@ -19,6 +19,8 @@ class General_Model():
         self.input_dim = input_dim
         self.output_dim = output_dim
 
+#if you are coming from Java or C# or something more object oriented, this is kinda like overwritting
+#you have other models within general model calling these functions from them
     def predict(self, x):
         return self.model.predict(x)
 
